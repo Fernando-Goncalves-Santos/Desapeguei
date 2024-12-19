@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
 
 async function main() {
-    await mongoose.connect('mongodb://localhost:27017/enjoei')
+    const dbURI = process.env.MONGO_URI || 'mongodb://localhost:27017/enjoei'; // Definindo fallback para o local
+    await mongoose.connect(dbURI);
     console.log('Conectado ao Mongoose')
 }
 
