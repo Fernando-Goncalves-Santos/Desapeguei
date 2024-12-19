@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-bottom: 1em;
+    font-size: 2.1em;
+}
+
+.bold {
+    /* color: #2B2D42; */
+    font-weight: bold;
+}
+
+
+body{
+    margin: 0;
+    overflow: visible;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    text-decoration: none;
+}
