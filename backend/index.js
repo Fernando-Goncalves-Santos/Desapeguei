@@ -11,7 +11,7 @@ const app = express()
 app.use(express.json())
 
 // Resolvendo CORS
-app.use(cors({credentials: true, origin: 'http://localhost:5173'}))
+app.use(cors({credentials: true, origin: 'https://desapeguei-7iyh.onrender.com'}))
 
 // Configurando a Public
 app.use(express.static('public'))
