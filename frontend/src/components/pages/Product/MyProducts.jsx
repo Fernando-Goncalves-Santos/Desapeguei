@@ -84,7 +84,7 @@ const MyProducts = () => {
           products.map((product) => (
             <div className={styles.productlist_row} key={product._id}>
               <RoundedImage
-                src={`${apiUrl}/images/products/${product.images[0]}`}
+                src={`${apiUrl}images/products/${product.images[0]}`}
                 alt={product.name}
                 widht={"px75"}
               />

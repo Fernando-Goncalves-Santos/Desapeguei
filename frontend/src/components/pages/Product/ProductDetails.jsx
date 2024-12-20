@@ -54,7 +54,7 @@ const ProductDetails = () => {
             <div className={styles.product_images}>
               {product.images.map((image, index) => (
                 <img
-                  src={`${apiUrl}/images/products/${image}`}
+                  src={`${apiUrl}images/products/${image}`}
                   alt={product.name}
                   key={index}
                 />

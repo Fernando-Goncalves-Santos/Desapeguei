@@ -26,7 +26,7 @@ const Home = () => {
         {products.length > 0 ? (
           products.map((product) => (
             <div className={styles.product_card} key={product._id}>
-              <div style={{backgroundImage: `url(${apiUrl}/images/products/${product.images[0]})`}} className={styles.product_card_image}></div>
+              <div style={{backgroundImage: `url(${apiUrl}images/products/${product.images[0]})`}} className={styles.product_card_image}></div>
               <h3>{product.name}</h3>
               <p>
                 <span className='bold blue'>R$ {product.price}</span>

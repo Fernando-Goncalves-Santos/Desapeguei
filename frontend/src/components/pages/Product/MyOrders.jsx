@@ -33,7 +33,7 @@ const MyOrders = () => {
             <div key={product._id} className={styles.productlist_row}>
               <div className={styles.left_container}>
                 <RoundedImage
-                  src={`${apiUrl}/images/products/${product.images[0]}`}
+                  src={`${apiUrl}images/products/${product.images[0]}`}
                   alt={product.name}
                   widht={"px75"}
                 />
