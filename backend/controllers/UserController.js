@@ -157,7 +157,7 @@ module.exports = class userController {
     const user = await getUserByToken(token);
 
     if(req.file) {
-        user.image = req.file.filename
+        user.image = req.file.path
     }
 
     // Validações
