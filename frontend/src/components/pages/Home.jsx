@@ -45,7 +45,7 @@ const Home = () => {
             </div>
           ))
         ) : (
-          <p>Não tem produtos</p>
+          <p>Carregando Produtos...</p>
         )}
       </div>
     </div>
