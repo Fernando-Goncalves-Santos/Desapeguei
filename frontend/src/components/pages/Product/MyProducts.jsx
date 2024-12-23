@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import useFlashMessage from "../../../hooks/useFlashMessage";
 
 import api from "../../../utils/api";
-const apiUrl = import.meta.env.VITE_API;
+const apiUrl = import.meta.env.CLOUDINARY_API;
 
 import RoundedImage from "../../layout/RoundedImage";
 import styles from "../Product/Dashboard.module.css";
@@ -108,7 +108,7 @@ const MyProducts = () => {
           products.map((product) => (
             <div className={styles.productlist_row} key={product._id}>
               <RoundedImage
-                src={`${product.images[0]}`}
+                src={`${apiUrl}${product.images[0]}`}
                 alt={product.name}
                 widht={width > 400 ? "px75" : "px45"}
               />
