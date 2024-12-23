@@ -12,7 +12,6 @@ module.exports = class ProductController {
     const images = req.files;
     const available = true;
 
-    console.log(images.length);
     // upload de imagens
 
     // Validações
