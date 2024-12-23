@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 const MyOrders = () => {
   const [products, setProducts] = useState([]);
   const [token] = useState(localStorage.getItem("token") || "");
+  const [width, setWidth] = useState(window.innerWidth)
 
   useEffect(() => {
     api
@@ -22,6 +23,26 @@ const MyOrders = () => {
       });
   }, [token]);
 
+      useEffect(() => {
+        let timeoutId;
+      
+        const handleSize = () => {
+          clearTimeout(timeoutId);
+          timeoutId = setTimeout(() => {
+            setWidth(window.innerWidth);
+          }, 50); // Ajuste o tempo do debounce conforme necessário
+        };
+      
+        handleSize();
+      
+        window.addEventListener("resize", handleSize);
+      
+        return () => {
+          clearTimeout(timeoutId);
+          window.removeEventListener("resize", handleSize);
+        };
+      }, []);
+
   return (
     <div>
       <header className={styles.productlist_header}>
@@ -30,12 +51,12 @@ const MyOrders = () => {
       <div className={styles.produclist_container}>
         {products.length > 0 ? (
           products.map((product) => (
-            <div key={product._id} className={styles.productlist_row}>
+            <div key={product._id} className={styles.products_row}>
               <div className={styles.left_container}>
                 <RoundedImage
                   src={`${apiUrl}images/products/${product.images[0]}`}
                   alt={product.name}
-                  widht={"px75"}
+                  widht={width > 500 ? "px75" : "px45"}
                 />
                 <span className="bold">{product.name}</span>
               </div>

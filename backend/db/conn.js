@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
+require('dotenv').config();
 
 async function main() {
-    const dbURI = process.env.MONGO_URI || 'mongodb+srv://fernandogoncalves:8440%40Gha@desapeguei.koujk.mongodb.net/desapeguei'; // Definindo fallback para o local
+    const dbURI = process.env.MONGO_URI
     await mongoose.connect(dbURI);
     console.log('Conectado ao Mongoose')
 }

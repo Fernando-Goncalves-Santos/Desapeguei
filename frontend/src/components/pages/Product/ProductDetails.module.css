@@ -74,3 +74,28 @@ p a{
     font-weight: bold;
 }
 
+/* Responsividade */
+
+@media (width<= 720px) {
+    .product_price {
+        font-size: 1.8em;
+    }
+
+    .product_banner button {
+        padding: .5em .8em;
+    }
+
+    .product_banner {
+        gap: 2em;
+    }
+}
+
+
+
+@media (width <= 610px) {
+
+    .product_banner {
+        flex-direction: column;
+    }
+
+}

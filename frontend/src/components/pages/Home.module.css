@@ -1,99 +1,121 @@
 .product_home_header {
-    margin-bottom: 2em;
-    color: #2B2D42;
+  margin-bottom: 2em;
+  color: #2b2d42;
 }
 
 .product_home_header h1 {
-    margin-bottom: .3em;
+  margin-bottom: 0.3em;
 }
 
 .product_container {
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  height: 100%;
 }
 
 .product_card {
-    width: 22%;
-    margin: 1.5%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+  width: 22%;
+  margin: 1.5%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .product_card p {
-    color: #118AB2;
+  color: #118ab2;
 }
 
 .product_card_image {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 225px;
-    width: 100%;
-    margin-bottom: 1.2em;
-    border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 225px;
+  width: 100%;
+  margin-bottom: 1.2em;
+  border-radius: 8px;
 }
 
 .product_card h3 {
-    color: #2B2D42;
-    margin-bottom: 1em;
-    font-size: 1.2em;
-    padding: .5em;
-    height: 3.5em; /* Altura fixa para 2 linhas */
-    overflow: hidden;
-    display: -webkit-box; /* Exibe o elemento como uma caixa flexível (WebKit) */
-    -webkit-line-clamp: 2; /* Limita o texto a 2 linhas (WebKit) */
-    line-clamp: 2;
-    -webkit-box-orient: vertical; /* Orientação vertical da caixa (WebKit) */
-    word-wrap: break-word; /* Quebra as palavras longas */
-    text-align: left;
+  color: #2b2d42;
+  margin-bottom: 1em;
+  font-size: 1.2em;
+  padding: 0.5em;
+  height: 3.5em; /* Altura fixa para 2 linhas */
+  overflow: hidden;
+  display: -webkit-box; /* Exibe o elemento como uma caixa flexível (WebKit) */
+  -webkit-line-clamp: 2; /* Limita o texto a 2 linhas (WebKit) */
+  line-clamp: 2;
+  -webkit-box-orient: vertical; /* Orientação vertical da caixa (WebKit) */
+  word-wrap: break-word; /* Quebra as palavras longas */
+  text-align: left;
 }
 
 .button {
-    padding: 0.5em 1em;
-    background-color: #118AB2;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    gap: .5em;
-    align-items: center; /* Alinha os itens verticalmente */
-    transition: background-color 0.3s ease, height 0.3s ease;
-    height: 2.5em; /* Define uma altura fixa para o botão */
+  padding: 0.5em 1em;
+  background-color: #118ab2;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+  align-items: center; /* Alinha os itens verticalmente */
+  transition: background-color 0.3s ease, height 0.3s ease;
+  height: 2.5em; /* Define uma altura fixa para o botão */
 }
 
 .button a {
-    text-decoration: none;
-    display: flex;
-    gap: 1em;
-    align-items: center;
-    justify-content: center;
+  text-decoration: none;
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
 }
 
 .button span,
 .button svg {
-    color: #EDF2F4;
-    transition: font-size 0.3s ease;
+  color: #edf2f4;
+  transition: font-size 0.3s ease;
 }
 
 .button:hover {
-    background-color: #06D6A0;
-    height: 2.5em;
-    transition: font-size 0.5s ease, height 0.3s ease;
+  background-color: #06d6a0;
+  height: 2.5em;
+  transition: font-size 0.5s ease, height 0.3s ease;
 }
 
 .button:hover span {
-    display: none;
+  display: none;
 }
 
 .button:hover svg {
-    font-size: 2em;
+  font-size: 2em;
 }
-
 
 .product_card p {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
+}
+
+@media (width <= 800px) {
+  .product_card {
+    width: 30%;
+    margin: 1.5%;
+    margin-bottom: 1.5em;
+  }
+}
+
+@media (width <= 570px) {
+  .product_card {
+    width: 47%;
+    margin: 1.5%;
+    margin-bottom: 1.5em;
+  }
 }
 
 
+@media (width <= 450px) {
+    .product_card {
+      width: 97%;
+      margin: 1.5%;
+      margin-bottom: 1.5em;
+    }
+  }

@@ -14,6 +14,7 @@ const MyProducts = () => {
   const [update, setUpdate] = useState(false)
   const [token] = useState(localStorage.getItem("token") || "");
   const { setFlashMessage } = useFlashMessage();
+  const [width, setWidth] = useState(window.innerWidth)
 
   useEffect(() => {
     api
@@ -53,6 +54,29 @@ const MyProducts = () => {
     setFlashMessage(data.message, msgType);
   }
 
+
+  
+  
+    useEffect(() => {
+      let timeoutId;
+    
+      const handleSize = () => {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+          setWidth(window.innerWidth);
+        }, 50); // Ajuste o tempo do debounce conforme necessário
+      };
+    
+      handleSize();
+    
+      window.addEventListener("resize", handleSize);
+    
+      return () => {
+        clearTimeout(timeoutId);
+        window.removeEventListener("resize", handleSize);
+      };
+    }, []);
+
   async function concludeSale(id) {
     let msgType = "success";
     const data = await api
@@ -86,7 +110,7 @@ const MyProducts = () => {
               <RoundedImage
                 src={`${apiUrl}images/products/${product.images[0]}`}
                 alt={product.name}
-                widht={"px75"}
+                widht={width > 400 ? "px75" : "px45"}
               />
               <span className="bold">{product.name}</span>
               <div className={styles.actions}>

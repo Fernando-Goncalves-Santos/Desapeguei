@@ -1,5 +1,6 @@
 const express = require('express')
 const cors = require('cors')
+require('dotenv').config();
 
 
 //  Instanciando o express
@@ -11,7 +12,7 @@ const app = express()
 app.use(express.json())
 
 // Resolvendo CORS
-app.use(cors({credentials: true, origin: 'https://desapeguei-7iyh.onrender.com'}))
+app.use(cors({credentials: true, origin: process.env.RENDER_API}))
 
 // Configurando a Public
 app.use(express.static('public'))

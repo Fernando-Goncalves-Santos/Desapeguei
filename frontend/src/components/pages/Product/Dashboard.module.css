@@ -31,15 +31,15 @@
 }
 
 .productlist_row p,
-.productlist_row span {
+.productlist_row span,
+.products_row p,
+.products_row span {
     color: #2B2D42;
 }
 
 .left_container{
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-right: 3em;
 }
 
 .productlist_row {
@@ -52,7 +52,24 @@
     width: 100%;
 }
 
-.productlist_row img {
+.products_row {
+    border-bottom: 1px solid #415A77;
+    padding: 1em;
+    margin: 1em;
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+    align-items: center;
+    width: 100%;
+}
+
+.products_row > div {
+    flex: 1;
+}
+
+
+.productlist_row img,
+.products_row img {
     margin-right: 1em;
 }
 
@@ -114,9 +131,105 @@
 /* MyOrders */
 
 .contacts {
-    margin-right: 3em;
+    margin-left: auto;
 }
 
 .contacts p {
     margin-bottom: .5em;
 }
+
+
+/* Responsividade */
+
+@media (width <= 670px) {
+    .productlist_header h1 {
+        font-size: 1.5em;
+    }
+
+    .productlist_header a {
+        padding: .3em .6em;
+    }
+
+    .productlist_row span {
+        font-size: .8em;
+    }
+
+    .actions {
+        display: flex;
+    }
+
+    
+    .products_row {
+        font-size: .8em;
+    }
+
+}
+
+@media (width <= 630px) {
+
+    .productlist_header {
+        justify-content: center;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .actions {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .productlist_row {
+        margin: 1em 0;
+        padding: 1em 0;
+    }
+
+    .products_row {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        padding: 1em 0;
+    }
+    .products_row .contacts,
+    .products_row .actions {
+        margin: 0;
+    }
+
+}
+
+
+@media (width <= 300px) {
+    .productlist_row img {
+        display: none;
+    }
+
+    .productlist_header h1 {
+        font-size: 1em;
+    }
+
+    .productlist_header a {
+        padding: .2em .4em;
+    }
+
+    .productlist_row span {
+        font-size: .8em;
+    }
+
+    .actions a,
+    .actions button {
+        padding: .3em .7em;
+        font-size: .5em;
+}
+
+}
+
+@media (width <= 260px) {
+
+    .productlist_header a {
+        font-size: .7em;
+    }
+}
+
+
