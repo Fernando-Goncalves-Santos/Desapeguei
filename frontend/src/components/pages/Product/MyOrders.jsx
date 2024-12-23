@@ -54,7 +54,7 @@ const MyOrders = () => {
             <div key={product._id} className={styles.products_row}>
               <div className={styles.left_container}>
                 <RoundedImage
-                  src={`${apiUrl}${product.images[0]}`}
+                  src={`https://res.cloudinary.com/dvt78xazb/image/upload/v1734975202/${product.images[0]}`}
                   alt={product.name}
                   widht={width > 500 ? "px75" : "px45"}
                 />

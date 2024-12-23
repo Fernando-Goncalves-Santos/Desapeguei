@@ -108,7 +108,7 @@ const MyProducts = () => {
           products.map((product) => (
             <div className={styles.productlist_row} key={product._id}>
               <RoundedImage
-                src={`${apiUrl}${product.images[0]}`}
+                src={`https://res.cloudinary.com/dvt78xazb/image/upload/v1734975202/${product.images[0]}`}
                 alt={product.name}
                 widht={width > 400 ? "px75" : "px45"}
               />
