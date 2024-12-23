@@ -77,7 +77,7 @@ const Profile = () => {
       <header className={styles.profile_header}>
         <h1>Perfil</h1>
         {(user.image || preview) && (
-            <RoundedImage src={preview ? URL.createObjectURL(preview) : `${apiUrl}images/users/${user.image}`} alt={user.name} />
+            <RoundedImage src={preview ? URL.createObjectURL(preview) : `${user.image}`} alt={user.name} />
         )}
       </header>
       <form className={formStyles.form_container} onSubmit={handleSubmit}>
