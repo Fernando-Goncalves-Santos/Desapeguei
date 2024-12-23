@@ -3,7 +3,7 @@ import styles from "./Dashboard.module.css";
 import api from "../../../utils/api";
 import { useState, useEffect } from "react";
 import RoundedImage from "../../layout/RoundedImage";
-const apiUrl = import.meta.env.VITE_API;
+const apiUrl = import.meta.env.CLOUDINARY_API;
 import { Link } from "react-router-dom";
 
 const MyOrders = () => {
@@ -54,7 +54,7 @@ const MyOrders = () => {
             <div key={product._id} className={styles.products_row}>
               <div className={styles.left_container}>
                 <RoundedImage
-                  src={`${apiUrl}images/products/${product.images[0]}`}
+                  src={`${apiUrl}${product.images[0]}`}
                   alt={product.name}
                   widht={width > 500 ? "px75" : "px45"}
                 />

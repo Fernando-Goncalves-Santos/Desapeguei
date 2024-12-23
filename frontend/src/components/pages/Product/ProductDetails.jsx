@@ -4,7 +4,7 @@ import api from "../../../utils/api";
 import { useParams } from "react-router-dom";
 import styles from "./ProductDetails.module.css";
 import useFlashMessage from "../../../hooks/useFlashMessage";
-const apiUrl = import.meta.env.VITE_API;
+const apiUrl = import.meta.env.CLOUDINARY_API;
 import { Link, useNavigate } from "react-router-dom";
 
 const ProductDetails = () => {
@@ -54,7 +54,7 @@ const ProductDetails = () => {
             <div className={styles.product_images}>
               {product.images.map((image, index) => (
                 <img
-                  src={`${apiUrl}images/products/${image}`}
+                  src={`${apiUrl}${image}`}
                   alt={product.name}
                   key={index}
                 />
