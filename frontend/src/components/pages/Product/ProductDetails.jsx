@@ -54,7 +54,7 @@ const ProductDetails = () => {
             <div className={styles.product_images}>
               {product.images.map((image, index) => (
                 <img
-                  src={`${apiUrl}${image}`}
+                  src={`https://res.cloudinary.com/dvt78xazb/image/upload/v1734975202/${image}`}
                   alt={product.name}
                   key={index}
                 />
