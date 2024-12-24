@@ -1,21 +1,19 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
-import { useState, useEffect } from 'react'
-import styles from './Home.module.css'
-import api from '../../utils/api'
+import React from "react";
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import styles from "./Home.module.css";
+import api from "../../utils/api";
 import { IoCart } from "react-icons/io5";
 const apiUrl = import.meta.env.VITE_API;
 
 const Home = () => {
-  const [products, setProducts] = useState({})
+  const [products, setProducts] = useState({});
 
   useEffect(() => {
-    
-    api.get('/products').then((response) =>{
-      setProducts(response.data.products)
-    })
-
-  }, [])
+    api.get("/products").then((response) => {
+      setProducts(response.data.products);
+    });
+  }, []);
   return (
     <div>
       <header className={styles.product_home_header}>
@@ -26,30 +24,43 @@ const Home = () => {
         {products.length > 0 ? (
           products.map((product) => (
             <div className={styles.product_card} key={product._id}>
-              <div style={{backgroundImage: `url(https://res.cloudinary.com/dvt78xazb/image/upload/v1734975202/${product.images[0]})`}} className={styles.product_card_image}></div>
+              <div
+                style={{
+                  backgroundImage: `url(https://res.cloudinary.com/dvt78xazb/image/upload/v1734975202/${product.images[0]})`,
+                }}
+                className={styles.product_card_image}
+              ></div>
               <h3>{product.name}</h3>
               <p>
-                <span className='bold blue'>R$ {product.price}</span>
+                <span className="bold blue">R$ {product.price}</span>
               </p>
               {product.available ? (
                 <>
-                <Link to={`product/${product._id}`}>
-                <div className={styles.button}>
-                  <IoCart/>
-                  <span>Comprar</span>
-                </div></Link>
+                  <Link to={`product/${product._id}`}>
+                    <div className={styles.button}>
+                      <IoCart />
+                      <span>Comprar</span>
+                    </div>
+                  </Link>
                 </>
-              ): (
+              ) : (
                 <p>Vendido!</p>
               )}
             </div>
           ))
         ) : (
-          <p>Carregando Produtos...</p>
+          <>
+            <p>Carregando Produtos...</p>
+            <p>
+              <span className="bold">Obs:</span> Esse projeto é hospedado de
+              forma gratuita no Render, dessa forma, os serviços inativos podem
+              ser temporariamente suspensos. Mas não se preocupe, em 30 segundos os servidores serão reiniciados e o <span className="bold">Desapeguei</span> funcionara normalmente{" "}
+            </p>
+          </>
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
