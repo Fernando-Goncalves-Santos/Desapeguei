@@ -71,7 +71,7 @@ const ProductForm = ({ productData, btnText, handleSubmit }) => {
             : product.images &&
               product.images.map((image, index) => (
                 <img
-                  src={ `${apiUrl}/images/products/${image}`}
+                  src={ `https://res.cloudinary.com/dvt78xazb/image/upload/v1734975202/${image}`}
                   alt={product.name}
                   key={`${product.name}+${index}`}
                 />

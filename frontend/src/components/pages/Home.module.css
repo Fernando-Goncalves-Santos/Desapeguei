@@ -95,6 +95,10 @@
   margin-bottom: 1em;
 }
 
+.loading p {
+  margin-bottom: 2em;
+}
+
 @media (width <= 800px) {
   .product_card {
     width: 30%;

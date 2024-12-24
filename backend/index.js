@@ -12,7 +12,8 @@ const app = express()
 app.use(express.json())
 
 // Resolvendo CORS
-app.use(cors({credentials: true, origin: process.env.RENDER_API}))
+app.use(cors({credentials: true, origin: process.env.RENDER_API }))
+// process.env.RENDER_API
 
 // Configurando a Public
 app.use(express.static('public'))
