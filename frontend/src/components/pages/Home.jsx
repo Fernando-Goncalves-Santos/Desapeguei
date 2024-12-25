@@ -63,7 +63,7 @@ const Home = () => {
             <p>Carregando Produtos...</p>
             <p>
               <span className="bold">Obs:</span> Esse projeto é hospedado de
-              forma gratuita no Render, para economia de recursos, os serviços inativos podem
+              forma gratuita no Render e, para economia de recursos, os serviços inativos podem
               ser temporariamente suspensos. Mas não se preocupe, em 30 segundos os servidores serão reiniciados e o <span className="bold">Desapeguei</span> funcionará normalmente{" "}
             </p>
           </div>
