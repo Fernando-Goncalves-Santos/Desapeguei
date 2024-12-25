@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import styles from "./Home.module.css";
 import api from "../../utils/api";
@@ -8,12 +8,21 @@ const apiUrl = import.meta.env.VITE_API;
 
 const Home = () => {
   const [products, setProducts] = useState({});
+  const navigate = useNavigate()
 
   useEffect(() => {
     api.get("/products").then((response) => {
       setProducts(response.data.products);
     });
   }, []);
+
+  const handleClick = (id) => {
+
+    navigate(`product/${id}`)
+
+  }
+
+
   return (
     <div>
       <header className={styles.product_home_header}>
@@ -29,6 +38,7 @@ const Home = () => {
                   backgroundImage: `url(https://res.cloudinary.com/dvt78xazb/image/upload/v1734975202/${product.images[0]})`,
                 }}
                 className={styles.product_card_image}
+                onClick={() => handleClick(product._id)}
               ></div>
               <h3>{product.name}</h3>
               <p>
